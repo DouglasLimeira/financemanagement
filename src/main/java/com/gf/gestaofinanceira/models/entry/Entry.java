@@ -1,41 +1,45 @@
-package com.gf.gestaofinanceira.entities;
+package com.gf.gestaofinanceira.models.entry;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
 import org.hibernate.annotations.CreationTimestamp;
+
+import com.gf.gestaofinanceira.entities.Transaction;
+import com.gf.gestaofinanceira.models.account.Account;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
+@Entity 
 @Getter 
 @Setter 
-@NoArgsConstructor  
-@Table (name = "accounts")
-public class Account implements Serializable{
+@NoArgsConstructor 
+@Table (name = "entries")
+public class Entry implements Serializable {
     private static final long serialVersionUID = 1L;
-
+    
     @Id 
     @GeneratedValue (strategy = GenerationType.AUTO)
     private UUID id;
 
-    @NotNull 
-    private BigDecimal balance;
-
-    @CreationTimestamp 
+    @CreationTimestamp
     @Column(name = "created_at", nullable = false, updatable = false,
         columnDefinition = "TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP")
     private OffsetDateTime createdAt;
-    
+
+    @JoinColumn(name = "account_id", nullable = false)
+    private Account account;
+
+    @JoinColumn(name = "transaction_id", nullable = false, unique = true)
+    private Transaction transaction;
 }

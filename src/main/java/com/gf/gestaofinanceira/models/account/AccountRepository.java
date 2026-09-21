@@ -1,10 +1,8 @@
-package com.gf.gestaofinanceira.repositories;
+package com.gf.gestaofinanceira.models.account;
 
 import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.gf.gestaofinanceira.entities.Account;
 
 public interface AccountRepository extends JpaRepository<Account, UUID> {
     

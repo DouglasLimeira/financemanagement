@@ -1,4 +1,4 @@
-package com.gf.gestaofinanceira.repositories;
+package com.gf.gestaofinanceira.models.entry;
 
 import java.security.KeyStore.Entry;
 import java.util.UUID;

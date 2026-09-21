@@ -1,4 +1,4 @@
-package com.gf.gestaofinanceira.entities;
+package com.gf.gestaofinanceira.models.scheduledTransaction;
 
 import java.io.Serializable;
 

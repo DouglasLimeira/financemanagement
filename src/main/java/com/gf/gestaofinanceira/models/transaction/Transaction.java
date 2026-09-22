@@ -1,4 +1,4 @@
-package com.gf.gestaofinanceira.entities;
+package com.gf.gestaofinanceira.models.transaction;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

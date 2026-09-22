@@ -6,8 +6,8 @@ import java.util.UUID;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-import com.gf.gestaofinanceira.entities.Transaction;
 import com.gf.gestaofinanceira.models.account.Account;
+import com.gf.gestaofinanceira.models.transaction.Transaction;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
